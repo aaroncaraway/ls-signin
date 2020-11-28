@@ -1,43 +1,29 @@
-import React, { useContext } from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import MenuItem from "@material-ui/core/MenuItem";
-import Select from "@material-ui/core/Select";
-import { withStyles } from "@material-ui/core/styles";
-import styles from "./styles/FormStyles";
-import { LanguageContext } from "./contexts/LanguageContext";
+import React, { useContext } from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/FormStyles';
 
 const words = {
   english: {
-    signIn: "Sign In",
-    email: "Email Address",
-    password: "Password",
-    remember: "Remember Me",
-  },
-  french: {
-    signIn: "Se Connecter",
-    email: "Adresse Électronique",
-    password: "Mot de Passe",
-    remember: "Souviens-toi De Moi",
-  },
-  spanish: {
-    signIn: "Registrarse",
-    email: "Correo Electrónico",
-    password: "Contraseña",
-    remember: "Recuérdame",
+    signIn: 'Sign In',
+    email: 'Email Address',
+    password: 'Password',
+    passwordConfirmation: 'PasswordConfirmation',
+    remember: 'Remember Me',
   },
 };
 
 const Form = (props) => {
-  const { language, updateLanguage } = useContext(LanguageContext);
+  const language = 'english';
   const { signIn, email, password, remember } = words[language];
   const { classes } = props;
   return (
@@ -47,11 +33,6 @@ const Form = (props) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography variant="h5">{signIn}</Typography>
-        <Select value={language} onChange={updateLanguage}>
-          <MenuItem value="english">English</MenuItem>
-          <MenuItem value="french">French</MenuItem>
-          <MenuItem value="spanish">Spanish</MenuItem>
-        </Select>
         <form className={classes.form}>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">{email}</InputLabel>
