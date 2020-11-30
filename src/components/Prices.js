@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-// import PaymentForm from './PaymentForm';
-// import Product from './Product';
+import PaymentForm from './PaymentForm';
+import Product from './Product';
 
 const products = [
   {
@@ -30,11 +30,10 @@ function Prices({ location }) {
   }
 
   return (
-    <div className="p-6">
-
+    <div className="p-8">
       <div className="flex flex-wrap justify-center">
         <h1> testing </h1>
-        {/* <div className="md:w-1/3 w-full mr-4 md:mb-8">
+        <div className="md:w-1/3 w-full mr-4 md:mb-8">
           <div className="text-center text-pasha font-bold text-2xl mt-4 mb-6">
             Subscribe to a plan
           </div>
@@ -56,7 +55,7 @@ function Prices({ location }) {
               customer={customer}
             />
           ) : null}
-        </div> */}
+        </div>
       </div>
     </div>
   );
